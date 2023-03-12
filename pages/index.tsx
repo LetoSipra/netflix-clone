@@ -19,7 +19,7 @@ function index({netflixOriginals, trendingNow, topRated, actionMovies, comedyMov
     return (
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-10">
         <Banner netflixOriginals={netflixOriginals} />
-        <section>
+        <section className="md:space-y-24">
             <CardRows title="Trending Now" movies={trendingNow} />
             <CardRows title="Top Rated" movies={topRated} />
             <CardRows title="Action" movies={actionMovies} />
