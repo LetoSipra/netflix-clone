@@ -1,4 +1,4 @@
-const KEY = process.env.TMBD_API_KEY
+const KEY = process.env.NEXT_PUBLIC_API_KEY
 
 const requests = {
   fetchNetflixOriginals: `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&with_networks=213`,

@@ -26,7 +26,9 @@ function index({netflixOriginals, trendingNow, topRated, actionMovies, comedyMov
     if (loading) return ""
 
     return (
-    <>    
+    <div className={`relative bg-gradient-to-b ${
+        showModal && '!h-screen overflow-hidden'
+      }`}> 
     <Header />
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-10">
         <Banner netflixOriginals={netflixOriginals} />
@@ -41,7 +43,7 @@ function index({netflixOriginals, trendingNow, topRated, actionMovies, comedyMov
         </section>
     </main>
     {showModal && <Modal />}
-    </>
+    </div>
 
   )
 }

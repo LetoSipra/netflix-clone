@@ -4,13 +4,17 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import {FaPlay} from "react-icons/fa"
 import {BsInfoCircleFill} from "react-icons/bs"
+import { useRecoilState } from "recoil";
+import { modalState, movieState } from "@/atoms/modal";
 
 interface Props {
     netflixOriginals: Movie[]
 }
 
 function Banner({ netflixOriginals }: Props) {
-    const [banner, setBanner] = useState<Movie | null>();
+    const [banner, setBanner] = useState<Movie | null>(null);
+    const [showModal, setShowModal] = useRecoilState(modalState);
+    const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
     
     const bannerButtons = "flex items-center gap-x-2 rounded-sm px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl"
 
@@ -40,7 +44,10 @@ function Banner({ netflixOriginals }: Props) {
                 <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" />
                 Play
             </button>
-            <button className={`${bannerButtons} bg-[gray]/70 `}>
+            <button className={`${bannerButtons} bg-[gray]/70 `} onClick={() => {
+            setCurrentMovie(banner)
+            setShowModal(true)
+          }}>
                 More Info
                 <BsInfoCircleFill className="h-5 w-5 md:h-8 md:w-8" />
             </button>
