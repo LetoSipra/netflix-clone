@@ -1,3 +1,4 @@
+import useAuth from '@/custom_hooks/useAuth';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai'
@@ -6,6 +7,7 @@ import { HiBell } from 'react-icons/hi'
 
 function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const {logout} = useAuth()
 
   useEffect(() => {
     const handeScroll = () => {

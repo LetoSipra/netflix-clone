@@ -2,6 +2,11 @@ import requests from "@/utility/api_requests";
 import { Movie } from "@/typings";
 import Banner from "./components/Banner";
 import CardRows from "./components/CardRows";
+import Header from "./components/Header";
+import useAuth from "@/custom_hooks/useAuth";
+import Modal from "./components/Modal";
+import { useRecoilValue } from "recoil";
+import { modalState } from "@/atoms/modal";
 
 interface Props {
   netflixOriginals: Movie[]
@@ -15,8 +20,14 @@ interface Props {
 }
 
 function index({netflixOriginals, trendingNow, topRated, actionMovies, comedyMovies, horrorMovies, romanceMovies, documentaries}: Props) {
-    
+    const {logout, loading} = useAuth()
+    const showModal = useRecoilValue(modalState)
+
+    if (loading) return ""
+
     return (
+    <>    
+    <Header />
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-10">
         <Banner netflixOriginals={netflixOriginals} />
         <section className="md:space-y-24">
@@ -29,6 +40,9 @@ function index({netflixOriginals, trendingNow, topRated, actionMovies, comedyMov
             <CardRows title="Documentaries" movies={documentaries} />
         </section>
     </main>
+    {showModal && <Modal />}
+    </>
+
   )
 }
 
