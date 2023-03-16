@@ -1,5 +1,5 @@
 import { modalState, movieState } from "@/atoms/modal";
-import { Genre, Movie } from "@/typings";
+import { Genre } from "@/typings";
 import {
   HandThumbUpIcon,
   PlusIcon,
@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import { useRecoilState } from "recoil";
-import { Element } from "../../typings";
+import { Element } from "../typings";
 
 function Modal() {
   const [showModal, setShowModal] = useRecoilState(modalState);

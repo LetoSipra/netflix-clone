@@ -1,12 +1,13 @@
 import requests from "@/utility/api_requests";
 import { Movie } from "@/typings";
-import Banner from "./components/Banner";
-import CardRows from "./components/CardRows";
-import Header from "./components/Header";
+import Banner from "../components/Banner";
+import CardRows from "../components/CardRows";
+import Header from "../components/Header";
 import useAuth from "@/custom_hooks/useAuth";
-import Modal from "./components/Modal";
+import Modal from "../components/Modal";
 import { useRecoilValue } from "recoil";
 import { modalState } from "@/atoms/modal";
+import Subscription from "@/components/Subscription";
 
 interface Props {
   netflixOriginals: Movie[]
@@ -22,8 +23,12 @@ interface Props {
 function index({netflixOriginals, trendingNow, topRated, actionMovies, comedyMovies, horrorMovies, romanceMovies, documentaries}: Props) {
     const {logout, loading} = useAuth()
     const showModal = useRecoilValue(modalState)
+    const subs = false
 
-    if (loading) return ""
+    if (loading || subs === null) return null
+    
+    if (!subs) return <Subscription />
+
 
     return (
     <div className={`relative bg-gradient-to-b ${
