@@ -3,7 +3,7 @@ import { Movie } from "@/typings";
 import Banner from "../components/Banner";
 import CardRows from "../components/CardRows";
 import Header from "../components/Header";
-import useAuth from "@/custom_hooks/useAuth";
+import useAuth from "@/hooks/useAuth";
 import Modal from "../components/Modal";
 import { useRecoilValue } from "recoil";
 import { modalState } from "@/atoms/modal";

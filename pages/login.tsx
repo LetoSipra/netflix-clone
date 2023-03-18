@@ -1,4 +1,4 @@
-import useAuth from "@/custom_hooks/useAuth";
+import useAuth from "@/hooks/useAuth";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";

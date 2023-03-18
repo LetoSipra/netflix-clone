@@ -1,4 +1,4 @@
-import useAuth from '@/custom_hooks/useAuth';
+import useAuth from '@/hooks/useAuth';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai'
