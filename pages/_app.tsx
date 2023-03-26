@@ -5,10 +5,12 @@ import Layout from "../components/Layout";
 import Banner from "../components/Banner";
 import { AuthProvider } from "@/hooks/useAuth";
 import { RecoilRoot } from "recoil";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
+      <Toaster />
       <Layout>
         <AuthProvider>
           <Component {...pageProps} />

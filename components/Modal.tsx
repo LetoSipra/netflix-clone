@@ -20,8 +20,9 @@ import {
   setDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { FaPlay } from "react-icons/fa";
+import { HiOutlineDocumentRemove } from "react-icons/hi";
 import ReactPlayer from "react-player";
 import { useRecoilState } from "recoil";
 import { Element } from "../typings";
@@ -37,11 +38,11 @@ function Modal() {
   const { user } = useAuth();
 
   const toastStyle = {
-    background: "white",
-    color: "black",
-    fontWeight: "bold",
+    background: "#141414",
+    color: "white",
     fontSize: "16px",
-    padding: "15px",
+    padding: "10px",
+    border: "1px solid white",
     borderRadius: "9999px",
     maxWidth: "1000px",
   };
@@ -56,10 +57,16 @@ function Modal() {
       );
 
       toast(
-        `${movie?.title || movie?.original_name} has been removed from My List`,
+        <p className="font-sans text-lg font-thin text-shadow">
+          {movie?.title || movie?.original_name} has been removed from My List
+        </p>,
         {
-          duration: 8000,
+          duration: 4000,
           style: toastStyle,
+          position: "bottom-center",
+          icon: (
+            <HiOutlineDocumentRemove className="m-auto h-7 w-7 rounded-full border border-solid border-white p-1" />
+          ),
         }
       );
     } else {
@@ -69,10 +76,16 @@ function Modal() {
       );
 
       toast(
-        `${movie?.title || movie?.original_name} has been added to My List`,
+        <p className="font-sans text-lg font-thin text-shadow">
+          {movie?.title || movie?.original_name} has been added to My List
+        </p>,
         {
-          duration: 8000,
+          duration: 4000,
           style: toastStyle,
+          position: "bottom-center",
+          icon: (
+            <CheckIcon className="m-auto h-7 w-7 rounded-full border border-solid border-white p-1" />
+          ),
         }
       );
     }
@@ -109,7 +122,7 @@ function Modal() {
 
     fetchMovie();
   }, [movie]);
-  
+
   useEffect(() => {
     if (user) {
       return onSnapshot(

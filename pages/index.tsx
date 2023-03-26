@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import useAuth from "@/hooks/useAuth";
 import Modal from "../components/Modal";
 import { useRecoilValue } from "recoil";
-import { modalState } from "@/atoms/modal";
+import { modalState, movieState } from "@/atoms/modal";
 import Subscription from "@/components/Subscription";
 import { getProducts, Product } from "@stripe/firestore-stripe-payments";
 import payments from "@/stripe";
@@ -47,7 +47,7 @@ function index({
 
   return (
     <div
-      className={`relative bg-gradient-to-b ${
+      className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${
         showModal && "!h-screen overflow-hidden"
       }`}>
       <Header />
