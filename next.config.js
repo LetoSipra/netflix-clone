@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['image.tmdb.org', 'www.linkpicture.com'],
   },
+  transpilePackages: ['@stripe/firestore-stripe-payments'],
 }
 
 module.exports = nextConfig
