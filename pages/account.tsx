@@ -20,7 +20,6 @@ function Account({ products }: Props) {
     <div>
       <Head>
         <title>Account Settings - Netflix</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderSide />
       <main className="mx-auto max-w-6xl px-5 pt-24 pb-12 transition-all md:px-10">
