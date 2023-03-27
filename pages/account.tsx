@@ -1,3 +1,4 @@
+import HeaderSide from "@/components/HeaderSide";
 import Membership from "@/components/Member";
 import useAuth from "@/hooks/useAuth";
 import useSubscribe from "@/hooks/useSubscribe";
@@ -21,24 +22,7 @@ function Account({ products }: Props) {
         <title>Account Settings - Netflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="fixed top-0 z-50 flex w-full items-center justify-between bg-[#141414] px-4 py-4 transition-all lg:px-10 lg:py-6">
-        <Link href="/">
-          <img
-            src="https://svgshare.com/i/r3T.svg"
-            width={120}
-            height={120}
-            alt=""
-            className="cursor-pointer object-contain"
-          />
-        </Link>
-        <Link href="/account">
-          <img
-            src="https://imgtr.ee/images/2023/03/12/ocoCL.png"
-            alt=""
-            className="cursor-pointer rounded"
-          />
-        </Link>
-      </header>
+      <HeaderSide />
       <main className="mx-auto max-w-6xl px-5 pt-24 pb-12 transition-all md:px-10">
         <div className="flex flex-col gap-x-4 md:flex-row">
           <h1 className="text-3xl md:text-4xl">Account</h1>

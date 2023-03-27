@@ -12,6 +12,7 @@ import { getProducts, Product } from "@stripe/firestore-stripe-payments";
 import payments from "@/stripe";
 import useSubscribe from "@/hooks/useSubscribe";
 import useList from "@/hooks/useList";
+import Head from "next/head";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -50,6 +51,10 @@ function index({
       className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${
         showModal && "!h-screen overflow-hidden"
       }`}>
+      <Head>
+        <title>Netflix</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-10">
         <Banner netflixOriginals={netflixOriginals} />

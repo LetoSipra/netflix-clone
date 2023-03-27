@@ -3,10 +3,19 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { HiBell } from "react-icons/hi";
+import MenuDropDown from "./MenuDropDown";
+import ProfileDropwDown from "./ProfileDropwDown";
 
 function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const { logout } = useAuth();
+
+  const links = [
+    { id: 0, label: "Home" },
+    { id: 1, label: "Tv Shows" },
+    { id: 2, label: "Movies" },
+    { id: 3, label: "New & Popular" },
+    { id: 4, label: "My List" },
+  ];
 
   useEffect(() => {
     const handeScroll = () => {
@@ -23,8 +32,6 @@ function Header() {
     };
   }, []);
 
-  const headerlinks = `cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3]`;
-
   return (
     <header
       className={`${
@@ -38,26 +45,23 @@ function Header() {
           height={100}
           className="cursor-pointer object-contain"
         />
-
+        <MenuDropDown />
         <ul className="hidden space-x-4 md:flex">
-          <li className={`${headerlinks}`}>Home</li>
-          <li className={`${headerlinks}`}>Tv Shows</li>
-          <li className={`${headerlinks}`}>Movies</li>
-          <li className={`${headerlinks}`}>New & Pouplar</li>
-          <li className={`${headerlinks}`}>My List</li>
+          {links.map((link) => (
+            <li
+              key={link.id}
+              className="cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3]">
+              {link.label}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="flex items-center space-x-4 text-sm font-light">
         <AiOutlineSearch className="hidden h-6 w-6 sm:inline" />
         <p className="hidden lg:inline">Kids</p>
         <HiBell className="h-6 w-6" />
-        <Link href={"/account"}>
-          <img
-            src="https://imgtr.ee/images/2023/03/12/ocoCL.png"
-            alt="profile"
-            className="cursor-pointer rounded"
-          />
-        </Link>
+        <Link href={"/account"}></Link>
+        <ProfileDropwDown />
       </div>
     </header>
   );

@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: [
     require('tailwind-scrollbar-hide'),
+    require('@headlessui/tailwindcss'),
     require('tailwindcss-textshadow'),
     require('tailwind-scrollbar'),
   ],
