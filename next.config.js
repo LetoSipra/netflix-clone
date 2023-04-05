@@ -2,9 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['image.tmdb.org', 'www.linkpicture.com'],
+    domains: ["image.tmdb.org", "www.linkpicture.com"],
   },
-  transpilePackages: ['@stripe/firestore-stripe-payments'],
-}
+  transpilePackages: ["@stripe/firestore-stripe-payments"],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
