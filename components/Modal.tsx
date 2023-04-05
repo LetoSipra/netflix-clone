@@ -206,7 +206,7 @@ function Modal() {
               <div className="flex flex-col space-y-3 text-sm">
                 <div>
                   <span className="text-[gray]">Genres: </span>
-                  {genre.map((genre) => genre.name).join(", ")}
+                  {genre?.map((genre) => genre.name).join(", ")}
                 </div>
 
                 <div>

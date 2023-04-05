@@ -1,5 +1,4 @@
 import { Menu } from "@headlessui/react";
-import { useState, useRef } from "react";
 
 function MenuDropDown() {
   const links = [
@@ -17,7 +16,7 @@ function MenuDropDown() {
         className={
           "absolute left-0 top-20 rounded-none border border-[gray] bg-black text-white"
         }>
-        {links.map((link) => (
+        {links?.map((link) => (
           <Menu.Item
             as="p"
             key={link.href}

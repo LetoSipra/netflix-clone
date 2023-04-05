@@ -47,7 +47,7 @@ function Header() {
         />
         <MenuDropDown />
         <ul className="hidden space-x-4 md:flex">
-          {links.map((link) => (
+          {links?.map((link) => (
             <li
               key={link.id}
               className="cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3]">

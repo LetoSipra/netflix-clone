@@ -15,7 +15,7 @@ function PlanDetail({ products, selected }: Props) {
               className={`w-full p-2.5 text-center text-sm font-normal text-white md:w-2/5 md:p-3.5 md:text-left md:text-base`}>
               Monthly price
             </td>
-            {products.map((product) => (
+            {products?.map((product) => (
               <td
                 className={`w-[calc(100%/3)] p-2.5 text-center md:w-[calc(60%/3)] md:p-3.5 ${
                   selected?.id === product.id ? "text-[e50914]" : "text-[gray]"
@@ -30,7 +30,7 @@ function PlanDetail({ products, selected }: Props) {
               className={`w-full p-2.5 text-center text-sm font-normal text-white md:w-2/5 md:p-3.5 md:text-left md:text-base`}>
               Video Quality
             </td>
-            {products.map((product) => (
+            {products?.map((product) => (
               <td
                 className={`w-[calc(100%/3)] p-2.5 text-center md:w-[calc(60%/3)] md:p-3.5 ${
                   selected?.id === product.id ? "text-[e50914]" : "text-[gray]"
@@ -45,7 +45,7 @@ function PlanDetail({ products, selected }: Props) {
               className={`w-full p-2.5 text-center text-sm font-normal text-white md:w-2/5 md:p-3.5 md:text-left md:text-base`}>
               Resolution
             </td>
-            {products.map((product) => (
+            {products?.map((product) => (
               <td
                 className={`w-[calc(100%/3)] p-2.5 text-center md:w-[calc(60%/3)] md:p-3.5 ${
                   selected?.id === product.id ? "text-[e50914]" : "text-[gray]"
@@ -60,7 +60,7 @@ function PlanDetail({ products, selected }: Props) {
               className={`w-full p-2.5 text-center text-sm font-normal text-white md:w-2/5 md:p-3.5 md:text-left md:text-base`}>
               Watch on your TV, computer, mobile phone and tabled
             </td>
-            {products.map((product) => (
+            {products?.map((product) => (
               <td
                 className={`w-[calc(100%/3)] p-2.5 text-center md:w-[calc(60%/3)] md:p-3.5 ${
                   selected?.id === product.id ? "text-[e50914]" : "text-[gray]"

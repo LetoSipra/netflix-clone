@@ -26,7 +26,7 @@ function MenuDropDown() {
         className={
           "absolute right-3 top-20 rounded-none border border-[gray] bg-black p-2 text-white"
         }>
-        {links.map((link) => (
+        {links?.map((link) => (
           <Link href={`${link.href}`}>
             <Menu.Item
               as="p"
