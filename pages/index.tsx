@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import useAuth from "@/hooks/useAuth";
 import Modal from "../components/Modal";
 import { useRecoilValue } from "recoil";
-import { modalState, movieState } from "@/atoms/modal";
+import { modalState } from "@/atoms/modal";
 import Subscription from "@/components/Subscription";
 import { getProducts, Product } from "@stripe/firestore-stripe-payments";
 import payments from "@/stripe";

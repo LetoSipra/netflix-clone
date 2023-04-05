@@ -6,7 +6,6 @@ import payments from "@/stripe";
 import { getProducts, Product } from "@stripe/firestore-stripe-payments";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 
 interface Props {
   products: Product[];
